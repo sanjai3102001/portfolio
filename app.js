@@ -1,13 +1,14 @@
 const express = require('express');
-const path = require('path');
-
 const app = express();
-const port = process.env.PORT || 3000;
 
-// Serve static files from the current directory
-app.use(express.static(path.join(__dirname)));
+// Elastic Beanstalk provides the port on process.env.PORT
+const port = process.env.PORT || 8080;
 
-// Start the server
+app.get('/', (req, res) => {
+  const message = '<h1>Hello from your Node.js App!</h1><p>If you are seeing this, your AWS CodePipeline is working correctly.</p>';
+  res.send(message);
+});
+
 app.listen(port, () => {
-  console.log(`Portfolio app listening at http://localhost:${port}`);
+  console.log(`Server is running on port ${port}`);
 });
