@@ -1,7 +1,7 @@
 {
-  "name": "nodejs-beanstalk-app",
+  "name": "portfolio-app",
   "version": "1.0.0",
-  "description": "A simple Node.js app for AWS Elastic Beanstalk",
+  "description": "A Node.js-powered portfolio website.",
   "main": "app.js",
   "scripts": {
     "start": "node app.js"

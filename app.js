@@ -1,15 +1,13 @@
 const express = require('express');
+const path = require('path');
 
-// Constants
-const PORT = process.env.PORT || 8080;
-const HOST = '0.0.0.0';
-
-// App
 const app = express();
-app.get('/', (req, res) => {
-  res.send('<h1>Hello from your Node.js App!</h1><p>If you are seeing this, your AWS CodePipeline is working correctly.</p>');
-});
+const port = process.env.PORT || 3000;
 
-app.listen(PORT, HOST, () => {
-  console.log(`Running on http://${HOST}:${PORT}`);
+// Serve static files from the current directory
+app.use(express.static(path.join(__dirname)));
+
+// Start the server
+app.listen(port, () => {
+  console.log(`Portfolio app listening at http://localhost:${port}`);
 });
