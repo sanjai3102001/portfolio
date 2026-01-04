@@ -2,7 +2,7 @@ version: 0.0
 os: linux
 files:
   - source: /
-    destination: /home/ec2-user/my-app # Changing to ec2-user home for permission safety
+    destination: /var/www/html  # <--- CHANGED: This is where Apache looks
 hooks:
   AfterInstall:
     - location: scripts/install_dependencies.sh
