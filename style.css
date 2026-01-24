@@ -1,63 +1,215 @@
+:root {
+    --primary-color: #2563eb;
+    --secondary-color: #1e293b;
+    --accent-color: #3b82f6;
+    --text-color: #334155;
+    --bg-light: #f8fafc;
+    --bg-white: #ffffff;
+    --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
 body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    font-family: 'Poppins', sans-serif;
     line-height: 1.6;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
-    color: #333;
+    background-color: var(--bg-light);
+    color: var(--text-color);
 }
 
 header {
-    background: #333;
-    color: #fff;
-    padding: 1rem 0;
-    text-align: center;
+    background: var(--bg-white);
+    box-shadow: var(--shadow);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    padding: 1rem 2rem;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 nav ul {
     padding: 0;
+    margin: 0;
     list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 nav ul li {
-    display: inline;
-    margin: 0 15px;
+    margin: 0 1rem;
 }
 
 nav a {
-    color: #fff;
+    color: var(--secondary-color);
     text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: var(--primary-color);
 }
 
 section {
-    padding: 20px;
-    margin: 0 20px;
-    background: #fff;
-    border-bottom: 1px solid #ddd;
+    padding: 4rem 2rem;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+h2 {
+    color: var(--secondary-color);
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    text-align: center;
+    position: relative;
+}
+
+h2::after {
+    content: '';
+    display: block;
+    width: 50px;
+    height: 4px;
+    background: var(--primary-color);
+    margin: 10px auto 0;
+    border-radius: 2px;
 }
 
 #hero {
     text-align: center;
-    padding: 50px 20px;
-    background: #333;
-    color: #fff;
+    padding: 8rem 2rem;
+    background: linear-gradient(135deg, var(--secondary-color), #0f172a);
+    color: var(--bg-white);
+    max-width: 100%;
 }
 
 #hero h1 {
-    font-size: 3rem;
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    letter-spacing: -1px;
 }
 
-.project {
-    margin-bottom: 20px;
+#hero p {
+    font-size: 1.2rem;
+    color: #cbd5e1;
+    margin-bottom: 2rem;
+}
+
+.btn {
+    display: inline-block;
+    background: var(--primary-color);
+    color: white;
+    padding: 0.8rem 2rem;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: transform 0.2s, background 0.3s;
+    box-shadow: 0 4px 14px 0 rgba(37, 99, 235, 0.39);
+}
+
+.btn:hover {
+    background: var(--accent-color);
+    transform: translateY(-2px);
+}
+
+/* Skills & Certifications */
+.skills-list, .cert-list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.skills-list li, .cert-list li {
+    background: var(--bg-white);
+    padding: 0.8rem 1.5rem;
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+    border-left: 4px solid var(--primary-color);
+}
+
+/* Experience Cards */
+.job-card {
+    background: var(--bg-white);
+    padding: 2rem;
+    margin-bottom: 2rem;
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+    transition: transform 0.3s;
+}
+
+.job-card:hover {
+    transform: translateY(-5px);
+}
+
+.job-card h3 {
+    margin-top: 0;
+    color: var(--secondary-color);
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.date {
+    font-size: 0.9rem;
+    color: #64748b;
+    font-weight: 400;
+}
+
+/* Projects Grid */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.project-card {
+    background: var(--bg-white);
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+    border-top: 4px solid var(--primary-color);
+    transition: transform 0.3s;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
 }
 
 footer {
     text-align: center;
-    padding: 20px;
-    background: #333;
-    color: #fff;
+    padding: 2rem;
+    background: var(--secondary-color);
+    color: #94a3b8;
+    margin-top: 4rem;
 }
 
 a {
-    color: #333;
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+#contact {
+    text-align: center;
+}
+
+.contact-info p {
+    font-size: 1.1rem;
+    margin: 0.5rem 0;
+}
+
+.contact-info i {
+    margin-right: 10px;
+    color: var(--primary-color);
 }

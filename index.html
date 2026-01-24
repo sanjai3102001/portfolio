@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sanjai K - Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -25,7 +27,7 @@
         <h1>Sanjai K</h1>
         <p>AWS Certified Solutions Architect & Developer Associate</p>
         <p>Golang | Python | AWS | DevOps</p>
-        <p><a href="SANJAI%20K%20Resume.pdf" download>Download Resume</a></p>
+        <a href="SANJAI%20K%20Resume.pdf" class="btn" download><i class="fas fa-download"></i> Download Resume</a>
     </section>
 
     <section id="about">
@@ -39,7 +41,7 @@
 
     <section id="skills">
         <h2>Technical Skills</h2>
-        <ul>
+        <ul class="skills-list">
             <li><strong>Languages:</strong> Golang, Python, Java</li>
             <li><strong>Cloud & Infrastructure:</strong> AWS, Terraform, CloudFormation</li>
             <li><strong>Containerization:</strong> Docker, Kubernetes, Helm</li>
@@ -51,7 +53,7 @@
 
     <section id="certifications">
         <h2>Certifications</h2>
-        <ul>
+        <ul class="cert-list">
             <li>AWS Certified Solutions Architect – Associate</li>
             <li>AWS Certified Developer – Associate</li>
         </ul>
@@ -59,49 +61,59 @@
 
     <section id="experience">
         <h2>Professional Experience</h2>
-        <h3>TATA ELXSI | Engineer (Jul 2024 – Present)</h3>
-        <ul>
-            <li>Architected and maintained backend services in Golang, enhancing system performance and scalability.</li>
-            <li>Built and optimized a high-traffic no-code/low-code platform serving 1M+ users, enabling rapid application development.</li>
-            <li>Collaborated on cloud-native solutions on AWS, leveraging serverless and compute services (EC2, S3, Lambda, RDS).</li>
-            <li>Spearheaded infrastructure optimization, improving resource utilization and cost efficiency.</li>
-        </ul>
+        <div class="job-card">
+            <h3>TATA ELXSI | Engineer <span class="date">(Jul 2024 – Present)</span></h3>
+            <ul>
+                <li>Architected and maintained backend services in Golang, enhancing system performance and scalability.</li>
+                <li>Built and optimized a high-traffic no-code/low-code platform serving 1M+ users, enabling rapid application development.</li>
+                <li>Collaborated on cloud-native solutions on AWS, leveraging serverless and compute services (EC2, S3, Lambda, RDS).</li>
+                <li>Spearheaded infrastructure optimization, improving resource utilization and cost efficiency.</li>
+            </ul>
+        </div>
 
-        <h3>TATA ELXSI | Associate Engineer (Jul 2022 – Jul 2024)</h3>
-        <ul>
-            <li>Designed and implemented CI/CD pipelines using Concourse and Helm, reducing deployment time by 30%.</li>
-            <li>Created a fully automated deployment pipeline from scratch, eliminating manual operational overhead.</li>
-            <li>Developed and optimized the backend for a high-volume OTT application, ensuring low-latency data retrieval.</li>
-        </ul>
+        <div class="job-card">
+            <h3>TATA ELXSI | Associate Engineer <span class="date">(Jul 2022 – Jul 2024)</span></h3>
+            <ul>
+                <li>Designed and implemented CI/CD pipelines using Concourse and Helm, reducing deployment time by 30%.</li>
+                <li>Created a fully automated deployment pipeline from scratch, eliminating manual operational overhead.</li>
+                <li>Developed and optimized the backend for a high-volume OTT application, ensuring low-latency data retrieval.</li>
+            </ul>
+        </div>
 
-        <h3>TATA ELXSI | Internship Trainee (Dec 2021 – Jun 2022)</h3>
-        <ul>
-            <li>Implemented Open Policy Agent (OPA) for authentication and fine-grained access control.</li>
-            <li>Integrated a robust observability stack using Kafka, Grafana, and Prometheus.</li>
-        </ul>
+        <div class="job-card">
+            <h3>TATA ELXSI | Internship Trainee <span class="date">(Dec 2021 – Jun 2022)</span></h3>
+            <ul>
+                <li>Implemented Open Policy Agent (OPA) for authentication and fine-grained access control.</li>
+                <li>Integrated a robust observability stack using Kafka, Grafana, and Prometheus.</li>
+            </ul>
+        </div>
     </section>
 
     <section id="projects">
         <h2>Key Projects</h2>
-        <div class="project">
-            <h3>No-Code/Low-Code Platform</h3>
-            <p>Built a high-traffic platform serving 1M+ users, significantly enabling rapid application development and reducing client time-to-market using Golang and AWS.</p>
-        </div>
-        <div class="project">
-            <h3>Automated CI/CD Infrastructure</h3>
-            <p>Designed pipelines using Concourse and Helm to automate infrastructure provisioning, reducing deployment times by 30%.</p>
-        </div>
-        <div class="project">
-            <h3>OTT Application Backend</h3>
-            <p>Developed the backend for a high-volume OTT application, ensuring low-latency data retrieval and seamless content delivery.</p>
+        <div class="projects-grid">
+            <div class="project-card">
+                <h3>No-Code/Low-Code Platform</h3>
+                <p>Built a high-traffic platform serving 1M+ users, significantly enabling rapid application development and reducing client time-to-market using Golang and AWS.</p>
+            </div>
+            <div class="project-card">
+                <h3>Automated CI/CD Infrastructure</h3>
+                <p>Designed pipelines using Concourse and Helm to automate infrastructure provisioning, reducing deployment times by 30%.</p>
+            </div>
+            <div class="project-card">
+                <h3>OTT Application Backend</h3>
+                <p>Developed the backend for a high-volume OTT application, ensuring low-latency data retrieval and seamless content delivery.</p>
+            </div>
         </div>
     </section>
 
     <section id="contact">
         <h2>Contact Me</h2>
-        <p>Email: <a href="mailto:sanjai99522s@gmail.com">sanjai99522s@gmail.com</a></p>
-        <p>Phone: +91 9488900582</p>
-        <p>Location: Trivandrum</p>
+        <div class="contact-info">
+            <p><i class="fas fa-envelope"></i> <a href="mailto:sanjai99522s@gmail.com">sanjai99522s@gmail.com</a></p>
+            <p><i class="fas fa-phone"></i> +91 9488900582</p>
+            <p><i class="fas fa-map-marker-alt"></i> Trivandrum</p>
+        </div>
     </section>
 
     <footer>
