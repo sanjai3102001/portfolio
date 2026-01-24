@@ -3,4 +3,4 @@
 systemctl start httpd
 systemctl enable httpd
 # Ensure permissions are correct
-apache:apache -R ec2-user:ec2-user /home/ec2-user/my-app
+chown -R apache:apache /var/www/html
