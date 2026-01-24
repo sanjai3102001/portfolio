@@ -30,7 +30,7 @@
         <a href="SANJAI%20K%20Resume.pdf" class="btn" download><i class="fas fa-download"></i> Download Resume</a>
     </section>
 
-    <section id="about">
+    <section id="about" class="hidden">
         <h2>About Me</h2>
         <p>
             AWS Certified Solutions Architect & Developer Associate with 4+ years of experience in building and deploying scalable, cloud-native solutions. 
@@ -39,7 +39,7 @@
         </p>
     </section>
 
-    <section id="skills">
+    <section id="skills" class="hidden">
         <h2>Technical Skills</h2>
         <ul class="skills-list">
             <li><strong>Languages:</strong> Golang, Python, Java</li>
@@ -51,7 +51,7 @@
         </ul>
     </section>
 
-    <section id="certifications">
+    <section id="certifications" class="hidden">
         <h2>Certifications</h2>
         <ul class="cert-list">
             <li>AWS Certified Solutions Architect – Associate</li>
@@ -59,7 +59,7 @@
         </ul>
     </section>
 
-    <section id="experience">
+    <section id="experience" class="hidden">
         <h2>Professional Experience</h2>
         <div class="job-card">
             <h3>TATA ELXSI | Engineer <span class="date">(Jul 2024 – Present)</span></h3>
@@ -89,7 +89,7 @@
         </div>
     </section>
 
-    <section id="projects">
+    <section id="projects" class="hidden">
         <h2>Key Projects</h2>
         <div class="projects-grid">
             <div class="project-card">
@@ -107,7 +107,7 @@
         </div>
     </section>
 
-    <section id="contact">
+    <section id="contact" class="hidden">
         <h2>Contact Me</h2>
         <div class="contact-info">
             <p><i class="fas fa-envelope"></i> <a href="mailto:sanjai99522s@gmail.com">sanjai99522s@gmail.com</a></p>
@@ -119,5 +119,17 @@
     <footer>
         <p>&copy; 2026 Sanjai K</p>
     </footer>
+
+    <script>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('show');
+                }
+            });
+        });
+        const hiddenElements = document.querySelectorAll('.hidden');
+        hiddenElements.forEach((el) => observer.observe(el));
+    </script>
 </body>
 </html>
