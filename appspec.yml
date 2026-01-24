@@ -2,7 +2,7 @@ version: 0.0
 os: linux
 files:
   - source: /
-    destination: /var/www/html  # <--- CHANGED: This is where Apache looks
+    destination: /var/www/html/portfolio
 hooks:
   AfterInstall:
     - location: scripts/install_dependencies.sh
