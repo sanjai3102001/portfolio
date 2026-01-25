@@ -175,8 +175,12 @@
         const body = document.body;
         const icon = themeBtn.querySelector('i');
 
-        // Check local storage
-        if(localStorage.getItem('theme') === 'dark') {
+        // Check local storage or time (Night: 6 PM - 6 AM)
+        const savedTheme = localStorage.getItem('theme');
+        const currentHour = new Date().getHours();
+        const isNight = currentHour >= 18 || currentHour < 6;
+
+        if(savedTheme === 'dark' || (!savedTheme && isNight)) {
             body.classList.add('dark-mode');
             icon.classList.remove('fa-sun');
             icon.classList.add('fa-moon');
