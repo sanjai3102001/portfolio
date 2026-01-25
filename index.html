@@ -3,133 +3,213 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sanjai K - Portfolio</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <title>Sanjai K | Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <div class="cursor-dot" id="cursor-dot"></div>
+    <div class="cursor-outline" id="cursor-outline"></div>
     
     <header>
-        <nav>
-            <ul>
-                <li><a href="#about">About</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#certifications">Certifications</a></li>
-                <li><a href="#experience">Experience</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
+        <div class="logo">SK.</div>
+        <div class="header-controls">
+            <button id="theme-toggle" class="theme-btn" aria-label="Toggle Dark Mode">
+                <i class="fas fa-sun"></i>
+            </button>
+            <nav>
+                <ul>
+                    <li><a href="#work">Work</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
     <section id="hero">
-        <h1>Sanjai K</h1>
-        <p>AWS Certified Solutions Architect & Developer Associate</p>
-        <p>Golang | Python | AWS | DevOps</p>
-        <a href="SANJAI%20K%20Resume.pdf" class="btn" download><i class="fas fa-download"></i> Download Resume</a>
-    </section>
-
-    <section id="about" class="hidden">
-        <h2>About Me</h2>
-        <p>
-            AWS Certified Solutions Architect & Developer Associate with 4+ years of experience in building and deploying scalable, cloud-native solutions. 
-            Expert in Golang, Python, and AWS, combining backend development with DevOps practices to build secure, reliable platforms. 
-            Proven track record of optimizing microservices for 1M+ users and reducing deployment times by 30% through advanced CI/CD automation.
-        </p>
-    </section>
-
-    <section id="skills" class="hidden">
-        <h2>Technical Skills</h2>
-        <ul class="skills-list">
-            <li><strong>Languages:</strong> Golang, Python, Java</li>
-            <li><strong>Cloud & Infrastructure:</strong> AWS, Terraform, CloudFormation</li>
-            <li><strong>Containerization:</strong> Docker, Kubernetes, Helm</li>
-            <li><strong>DevOps:</strong> Concourse, Jenkins, GitHub Actions, Ansible</li>
-            <li><strong>Observability:</strong> OPA, Kafka, Prometheus, Grafana</li>
-            <li><strong>Databases:</strong> PostgreSQL, MongoDB, MySQL</li>
-        </ul>
-    </section>
-
-    <section id="certifications" class="hidden">
-        <h2>Certifications</h2>
-        <ul class="cert-list">
-            <li>AWS Certified Solutions Architect – Associate</li>
-            <li>AWS Certified Developer – Associate</li>
-        </ul>
-    </section>
-
-    <section id="experience" class="hidden">
-        <h2>Professional Experience</h2>
-        <div class="job-card">
-            <h3>TATA ELXSI | Engineer <span class="date">(Jul 2024 – Present)</span></h3>
-            <ul>
-                <li>Architected and maintained backend services in Golang, enhancing system performance and scalability.</li>
-                <li>Built and optimized a high-traffic no-code/low-code platform serving 1M+ users, enabling rapid application development.</li>
-                <li>Collaborated on cloud-native solutions on AWS, leveraging serverless and compute services (EC2, S3, Lambda, RDS).</li>
-                <li>Spearheaded infrastructure optimization, improving resource utilization and cost efficiency.</li>
-            </ul>
-        </div>
-
-        <div class="job-card">
-            <h3>TATA ELXSI | Associate Engineer <span class="date">(Jul 2022 – Jul 2024)</span></h3>
-            <ul>
-                <li>Designed and implemented CI/CD pipelines using Concourse and Helm, reducing deployment time by 30%.</li>
-                <li>Created a fully automated deployment pipeline from scratch, eliminating manual operational overhead.</li>
-                <li>Developed and optimized the backend for a high-volume OTT application, ensuring low-latency data retrieval.</li>
-            </ul>
-        </div>
-
-        <div class="job-card">
-            <h3>TATA ELXSI | Internship Trainee <span class="date">(Dec 2021 – Jun 2022)</span></h3>
-            <ul>
-                <li>Implemented Open Policy Agent (OPA) for authentication and fine-grained access control.</li>
-                <li>Integrated a robust observability stack using Kafka, Grafana, and Prometheus.</li>
-            </ul>
-        </div>
-    </section>
-
-    <section id="projects" class="hidden">
-        <h2>Key Projects</h2>
-        <div class="projects-grid">
-            <div class="project-card">
-                <h3>No-Code/Low-Code Platform</h3>
-                <p>Built a high-traffic platform serving 1M+ users, significantly enabling rapid application development and reducing client time-to-market using Golang and AWS.</p>
-            </div>
-            <div class="project-card">
-                <h3>Automated CI/CD Infrastructure</h3>
-                <p>Designed pipelines using Concourse and Helm to automate infrastructure provisioning, reducing deployment times by 30%.</p>
-            </div>
-            <div class="project-card">
-                <h3>OTT Application Backend</h3>
-                <p>Developed the backend for a high-volume OTT application, ensuring low-latency data retrieval and seamless content delivery.</p>
+        <div class="hero-content">
+            <p class="intro-text">Hello, I'm Sanjai K.</p>
+            <h1>
+                <span class="reveal-text">Solutions</span>
+                <span class="reveal-text">Architect &</span>
+                <span class="reveal-text">Developer.</span>
+            </h1>
+            <p class="sub-hero">Specializing in Golang, Python, AWS, and DevOps.</p>
+            <div class="hero-btns">
+                <a href="#projects" class="btn primary">View Projects</a>
+                <a href="SANJAI%20K%20Resume.pdf" class="btn secondary" download>Resume</a>
             </div>
         </div>
     </section>
 
-    <section id="contact" class="hidden">
-        <h2>Contact Me</h2>
-        <div class="contact-info">
-            <p><i class="fas fa-envelope"></i> <a href="mailto:sanjai99522s@gmail.com">sanjai99522s@gmail.com</a></p>
-            <p><i class="fas fa-phone"></i> +91 9488900582</p>
-            <p><i class="fas fa-map-marker-alt"></i> Trivandrum</p>
+    <div class="marquee-container">
+        <div class="marquee-content">
+            GOLANG • PYTHON • JAVA • AWS • TERRAFORM • DOCKER • KUBERNETES • HELM • CONCOURSE • JENKINS • OPA • KAFKA • PROMETHEUS • GRAFANA • POSTGRESQL • MONGODB • MYSQL •
+            GOLANG • PYTHON • JAVA • AWS • TERRAFORM • DOCKER • KUBERNETES • HELM • CONCOURSE • JENKINS • OPA • KAFKA • PROMETHEUS • GRAFANA • POSTGRESQL • MONGODB • MYSQL •
+        </div>
+    </div>
+
+    <section id="about" class="section-padding">
+        <div class="container">
+            <div class="section-header">
+                <h2>About</h2>
+            </div>
+            <div class="about-grid">
+                <div class="about-text">
+                    <p>
+                        I am an <strong>AWS Certified Solutions Architect & Developer Associate</strong> with 4+ years of experience in building and deploying scalable, cloud-native solutions. 
+                    </p>
+                    <p>
+                        Expert in Golang, Python, and AWS, I combine backend development with DevOps practices to build secure, reliable platforms. I have a proven track record of optimizing microservices for 1M+ users and reducing deployment times by 30% through advanced CI/CD automation.
+                    </p>
+                </div>
+                <div class="certifications">
+                    <h3>Certifications</h3>
+                    <ul class="cert-list">
+                        <li><i class="fas fa-certificate"></i> AWS Certified Solutions Architect – Associate</li>
+                        <li><i class="fas fa-certificate"></i> AWS Certified Developer – Associate</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="experience" class="section-padding">
+        <div class="container">
+            <div class="section-header">
+                <h2>Experience</h2>
+            </div>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-date">Jul 2024 – Present</div>
+                    <div class="timeline-content">
+                        <h3>Engineer</h3>
+                        <h4>TATA ELXSI</h4>
+                        <p>Architected backend services in Golang. Built a high-traffic no-code/low-code platform serving 1M+ users. Optimized AWS infrastructure (EC2, S3, Lambda, RDS).</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">Jul 2022 – Jul 2024</div>
+                    <div class="timeline-content">
+                        <h3>Associate Engineer</h3>
+                        <h4>TATA ELXSI</h4>
+                        <p>Designed CI/CD pipelines using Concourse and Helm, reducing deployment time by 30%. Developed backend for a high-volume OTT application.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">Dec 2021 – Jun 2022</div>
+                    <div class="timeline-content">
+                        <h3>Internship Trainee</h3>
+                        <h4>TATA ELXSI</h4>
+                        <p>Implemented OPA for access control. Integrated observability stack with Kafka, Grafana, and Prometheus.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="section-padding">
+        <div class="container">
+            <div class="section-header">
+                <h2>Selected Work</h2>
+            </div>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-info">
+                        <h3>No-Code Platform</h3>
+                        <p>High-traffic platform serving 1M+ users. Built with Golang & AWS.</p>
+                        <div class="tags">
+                            <span>Golang</span><span>AWS</span><span>Microservices</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-info">
+                        <h3>CI/CD Automation</h3>
+                        <p>Automated infrastructure provisioning reducing deployment times by 30%.</p>
+                        <div class="tags">
+                            <span>Concourse</span><span>Helm</span><span>DevOps</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-info">
+                        <h3>OTT Backend</h3>
+                        <p>Low-latency data retrieval for high-volume media application.</p>
+                        <div class="tags">
+                            <span>Backend</span><span>Performance</span><span>Scale</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="section-padding">
+        <div class="container">
+            <div class="contact-wrapper">
+                <h2>Let's work together.</h2>
+                <div class="contact-links">
+                    <a href="mailto:sanjai99522s@gmail.com" class="contact-link">sanjai99522s@gmail.com</a>
+                    <a href="https://www.linkedin.com/in/sanjai-k03102001/" class="contact-link">LinkedIn</a>
+                    <a href="https://github.com/sanjai3102001" class="contact-link">GitHub</a>
+                </div>
+                <p class="location">Based in Trivandrum, India</p>
+            </div>
         </div>
     </section>
 
     <footer>
-        <p>&copy; 2026 Sanjai K</p>
+        <p>&copy; 2026 Sanjai K. Crafted with code.</p>
     </footer>
 
     <script>
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach((entry) => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('show');
-                }
-            });
+        // Theme Toggle
+        const themeBtn = document.getElementById('theme-toggle');
+        const body = document.body;
+        const icon = themeBtn.querySelector('i');
+
+        // Check local storage
+        if(localStorage.getItem('theme') === 'dark') {
+            body.classList.add('dark-mode');
+            icon.classList.remove('fa-sun');
+            icon.classList.add('fa-moon');
+        }
+
+        themeBtn.addEventListener('click', () => {
+            body.classList.toggle('dark-mode');
+            if(body.classList.contains('dark-mode')) {
+                localStorage.setItem('theme', 'dark');
+                icon.classList.remove('fa-sun');
+                icon.classList.add('fa-moon');
+            } else {
+                localStorage.setItem('theme', 'light');
+                icon.classList.remove('fa-moon');
+                icon.classList.add('fa-sun');
+            }
         });
-        const hiddenElements = document.querySelectorAll('.hidden');
-        hiddenElements.forEach((el) => observer.observe(el));
+
+        // Custom Cursor
+        const cursorDot = document.getElementById('cursor-dot');
+        const cursorOutline = document.getElementById('cursor-outline');
+
+        window.addEventListener('mousemove', (e) => {
+            const posX = e.clientX;
+            const posY = e.clientY;
+
+            cursorDot.style.left = `${posX}px`;
+            cursorDot.style.top = `${posY}px`;
+
+            // Smooth follow for outline
+            cursorOutline.animate({
+                left: `${posX}px`,
+                top: `${posY}px`
+            }, { duration: 500, fill: "forwards" });
+        });
     </script>
 </body>
 </html>
