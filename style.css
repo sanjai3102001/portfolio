@@ -128,6 +128,16 @@ nav a:hover {
     transform: rotate(15deg);
 }
 
+/* Hamburger Menu (Hidden on Desktop) */
+.hamburger {
+    display: none;
+    background: none;
+    border: none;
+    color: var(--text-color);
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
 /* Hero Section */
 #hero {
     height: 100vh;
@@ -369,19 +379,87 @@ footer {
 
 /* Responsive */
 @media (max-width: 768px) {
+    /* General Adjustments */
+    .section-padding {
+        padding: 4rem 5%;
+    }
+
+    header {
+        padding: 1rem 5%;
+    }
+
     .hero-content h1 {
-        font-size: 3rem;
+        font-size: 2.5rem;
+    }
+
+    .sub-hero {
+        font-size: 1rem;
+    }
+
+    /* Mobile Navigation */
+    .hamburger {
+        display: block;
+        z-index: 101;
+    }
+
+    nav {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 75%;
+        height: 100vh;
+        background: var(--bg-color);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        transition: right 0.3s ease-in-out;
+        box-shadow: -5px 0 15px rgba(0,0,0,0.1);
+        z-index: 100;
+    }
+
+    nav.active {
+        right: 0;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 2.5rem;
     }
     
+    nav a {
+        font-size: 1.2rem;
+    }
+
+    /* Layout Stacking */
     .about-grid {
         grid-template-columns: 1fr;
+        gap: 2rem;
     }
     
+    /* Disable Custom Cursor on Touch */
     .cursor-dot, .cursor-outline {
-        display: none; /* Hide custom cursor on touch devices */
+        display: none;
     }
     
     * {
         cursor: auto;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-btns {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .btn {
+        text-align: center;
+        width: 100%;
+    }
+
+    .contact-links {
+        flex-wrap: wrap;
+        gap: 1rem;
     }
 }
