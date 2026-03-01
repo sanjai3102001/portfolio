@@ -1,8 +1,12 @@
+require('dotenv').config();
 const express = require('express');
 const path = require('path');
 const app = express();
 
 const port = process.env.PORT || 8080;
+
+// Middleware to parse JSON bodies
+app.use(express.json());
 
 // Serve static files like CSS, JS, images from the root directory
 app.use(express.static(path.join(__dirname)));
