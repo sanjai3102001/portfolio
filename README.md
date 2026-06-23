@@ -11,6 +11,7 @@ A modern, high-performance personal portfolio website designed to showcase my ex
 - **Performance**: Lightweight vanilla JavaScript and CSS for maximum speed.
 
 
+
 ## 🛠️ Tech Stack
 
 - **Frontend**: HTML5, CSS3 (Variables, Flexbox, Grid), JavaScript (ES6+)
