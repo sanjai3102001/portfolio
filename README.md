@@ -20,6 +20,7 @@ A modern, high-performance personal portfolio website designed to showcase my ex
 
 ## 📂 Project Structure
 
+
 ```
 portfolio/
 ├── index.html      # Main entry point
