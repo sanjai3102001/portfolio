@@ -3,13 +3,89 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sanjai K | Portfolio</title>
+    <title>Sanjai K | Cloud & DevOps Engineer</title>
     <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%232563eb'/%3E%3Ctext x='50%25' y='50%25' dy='.35em' fill='white' font-family='sans-serif' font-weight='bold' font-size='50' text-anchor='middle'%3ESK%3C/text%3E%3C/svg%3E">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
+    <style>
+        /* Added styles for new features */
+        #hero {
+            position: relative;
+            overflow: hidden;
+            min-height: 100vh;
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-between;
+            padding: 4rem 5%;
+            box-sizing: border-box;
+        }
+        .video-background {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transform: translate(-50%, -50%);
+            z-index: -1;
+        }
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            color: white;
+            text-align: left;
+            background: none;
+            padding: 0;
+            border-radius: 0;
+        }
+        .play-reel-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+            z-index: 2;
+        }
+        #play-reel-btn {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            background: rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(8px);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        #play-reel-btn:hover {
+            transform: scale(1.1);
+            background-color: var(--accent-color);
+        }
+        .play-reel-container span {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 600;
+            color: white;
+            text-shadow: 0 1px 3px rgba(0,0,0,0.5);
+        }
+        .about-image {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .about-image img {
+            max-width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+    </style>
 </head>
 <body>
     <!-- Chat Widget -->
@@ -46,8 +122,10 @@
             </button>
             <nav>
                 <ul>
-                    <li><a href="#experience">Work</a></li>
                     <li><a href="#about">About</a></li>
+                    <li><a href="#experience">Experience</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#education">Education</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
             </nav>
@@ -55,25 +133,31 @@
     </header>
 
     <section id="hero">
+        <video playsinline poster="Hero Image.png" id="hero-video" class="video-background" style="filter: brightness(0.9);">
+            <source src="GenerateVideo.mp4" type="video/mp4">
+        </video>
         <div class="hero-content">
             <p class="intro-text">Hello, I'm Sanjai K.</p>
             <h1>
-                <span class="reveal-text">Solutions</span>
-                <span class="reveal-text">Architect &</span>
-                <span class="reveal-text">Developer.</span>
+                <span class="reveal-text">Cloud & DevOps</span>
+                <span class="reveal-text">Engineer</span>
             </h1>
-            <p class="sub-hero">Specializing in Golang, Python, AWS, and DevOps.</p>
+            <p class="sub-hero">Specializing in Golang, Python, and AWS to build scalable, cloud-native solutions.</p>
             <div class="hero-btns">
                 <a href="#projects" class="btn primary">View Projects</a>
-                <a href="SANJAI%20K%20Resume.pdf" class="btn secondary" download>Resume</a>
+                <a href="Resume.pdf" class="btn secondary" download>Resume</a>
             </div>
+        </div>
+        <div class="play-reel-container">
+            <button id="play-reel-btn" aria-label="Play Reel"><i class="fas fa-play"></i></button>
+            <span id="play-reel-text">Play Reel</span>
         </div>
     </section>
 
     <div class="marquee-container">
         <div class="marquee-content">
-            GOLANG • PYTHON • JAVA • AWS • TERRAFORM • DOCKER • KUBERNETES • HELM • CONCOURSE • JENKINS • OPA • KAFKA • PROMETHEUS • GRAFANA • POSTGRESQL • MONGODB • MYSQL •
-            GOLANG • PYTHON • JAVA • AWS • TERRAFORM • DOCKER • KUBERNETES • HELM • CONCOURSE • JENKINS • OPA • KAFKA • PROMETHEUS • GRAFANA • POSTGRESQL • MONGODB • MYSQL •
+            GOLANG • PYTHON • JAVA • AWS • TERRAFORM • CLOUDFORMATION • DOCKER • KUBERNETES • HELM • CONCOURSE • JENKINS • GITHUB ACTIONS • ANSIBLE • OPA • KAFKA • PROMETHEUS • GRAFANA • POSTGRESQL • MONGODB • MYSQL •
+            GOLANG • PYTHON • JAVA • AWS • TERRAFORM • CLOUDFORMATION • DOCKER • KUBERNETES • HELM • CONCOURSE • JENKINS • GITHUB ACTIONS • ANSIBLE • OPA • KAFKA • PROMETHEUS • GRAFANA • POSTGRESQL • MONGODB • MYSQL •
         </div>
     </div>
 
@@ -91,12 +175,11 @@
                         Expert in Golang, Python, and AWS, I combine backend development with DevOps practices to build secure, reliable platforms. I have a proven track record of optimizing microservices for 1M+ users and reducing deployment times by 30% through advanced CI/CD automation.
                     </p>
                 </div>
-                <div class="certifications">
-                    <h3>Certifications</h3>
-                    <ul class="cert-list">
-                        <li><i class="fas fa-certificate"></i> AWS Certified Solutions Architect – Associate</li>
-                        <li><i class="fas fa-certificate"></i> AWS Certified Developer – Associate</li>
-                    </ul>
+                <div class="about-image">
+                    <!-- This video is set to show the first frame of your animation as a static image. -->
+                    <video preload="auto" style="width: 100%; border-radius: 10px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+                        <source src="GenerateVideo.mp4#t=0.1" type="video/mp4">
+                    </video>
                 </div>
             </div>
         </div>
@@ -173,15 +256,49 @@
         </div>
     </section>
 
+    <section id="education" class="section-padding">
+        <div class="container">
+            <div class="section-header">
+                <h2>Education</h2>
+            </div>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-date">Aug 2019 – Mar 2022</div>
+                    <div class="timeline-content">
+                        <h3>B.Sc. Information Technology</h3>
+                        <h4>Dr. N.G.P. Arts and Science College</h4>
+                        <p>CGPA: 7.5</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="certificates" class="section-padding">
+        <div class="container">
+            <div class="section-header">
+                <h2>Certifications</h2>
+            </div>
+            <div class="certifications">
+                <ul class="cert-list" style="list-style: none; padding-left: 0;">
+                    <li><i class="fas fa-certificate"></i> AWS Certified Solutions Architect – Associate</li>
+                    <li><i class="fas fa-certificate"></i> AWS Certified Developer – Associate</li>
+                </ul>
+                <div style="margin-top: 20px; text-align: center;">
+                    <a href="Certificates.pdf" class="btn secondary" download>View Certificates</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section id="contact" class="section-padding">
         <div class="container">
             <div class="contact-wrapper">
                 <h2>Let's work together.</h2>
                 <div class="contact-links">
                     <a href="mailto:sanjai99522s@gmail.com" class="contact-link">sanjai99522s@gmail.com</a>
-                    <a href="https://www.linkedin.com/in/sanjai-k03102001/" class="contact-link">LinkedIn</a>
-                    <a href="https://github.com/sanjai3102001" class="contact-link">GitHub</a>
-                    <a href="https://leetcode.com/u/Sanjai03102001/" class="contact-link">LeetCode</a>
+                    <a href="https://www.linkedin.com/in/sanjai-k03102001/" target="_blank" class="contact-link">LinkedIn</a>
+                    <a href="https://github.com/sanjai3102001" target="_blank" class="contact-link">GitHub</a>
                 </div>
                 <p class="location">Based in Trivandrum, India</p>
             </div>
@@ -322,6 +439,34 @@
         sendBtn.addEventListener('click', sendMessage);
         chatInput.addEventListener('keypress', (e) => {
             if (e.key === 'Enter') sendMessage();
+        });
+
+        // Hero Video "Play Reel" Logic
+        const playReelBtn = document.getElementById('play-reel-btn');
+        const heroVideo = document.getElementById('hero-video');
+        const playReelIcon = playReelBtn.querySelector('i');
+        const playReelText = document.getElementById('play-reel-text');
+
+        playReelBtn.addEventListener('click', () => {
+            if (heroVideo.paused) {
+                heroVideo.muted = false;
+                heroVideo.play();
+                playReelIcon.classList.remove('fa-play');
+                playReelIcon.classList.add('fa-pause');
+                playReelText.textContent = 'Pause';
+            } else {
+                heroVideo.pause();
+                playReelIcon.classList.remove('fa-pause');
+                playReelIcon.classList.add('fa-play');
+                playReelText.textContent = 'Play Reel';
+            }
+        });
+
+        heroVideo.addEventListener('ended', () => {
+            playReelIcon.classList.remove('fa-pause');
+            playReelIcon.classList.add('fa-play');
+            playReelText.textContent = 'Play Reel';
+            heroVideo.currentTime = 0;
         });
     </script>
 </body>
