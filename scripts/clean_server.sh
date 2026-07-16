@@ -1,4 +1,6 @@
 #!/bin/bash
-# Clean up the web root to remove old portfolio folder or cached files
-rm -rf /var/www/html
-mkdir -p /var/www/html
+# Clean up the web root by removing its contents, but not the directory itself.
+# This is safer than `rm -rf /var/www/html`.
+if [ -d "/var/www/html" ]; then
+  rm -rf /var/www/html/*
+fi
