@@ -17,7 +17,7 @@ chown -R apache:apache /var/www/html
 # Restore the default SELinux security context for web content.
 # This is a crucial step to allow the Apache process to read the files.
 echo "Restoring SELinux context for /var/www/html"
-restorecon -R /var/www/html
+chcon -R -t httpd_sys_content_t /var/www/html
  
 # Restart the Apache web server to apply changes
 echo "Restarting httpd service"
