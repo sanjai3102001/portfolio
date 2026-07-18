@@ -27,7 +27,6 @@ html {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  cursor: none; /* Hide default cursor for custom one */
 }
 
 body {
@@ -37,34 +36,6 @@ body {
   line-height: 1.6;
   transition: background-color 0.3s ease, color 0.3s ease;
   overflow-x: hidden;
-}
-
-/* Custom Cursor */
-.cursor-dot, .cursor-outline {
-  position: fixed;
-  top: 0;
-  left: 0;
-  transform: translate(-50%, -50%);
-  border-radius: 50%;
-  z-index: 9999;
-  pointer-events: none;
-  transition: opacity 0.3s, transform 0.3s;
-}
-
-.cursor-dot {
-  width: 8px;
-  height: 8px;
-  background-color: var(--text-color);
-}
-
-.cursor-outline {
-  width: 40px;
-  height: 40px;
-  border: 1px solid var(--secondary-text);
-}
-
-a, button {
-  cursor: none; /* Ensure links don't show default cursor */
 }
 
 /* Header */
@@ -583,15 +554,6 @@ footer {
     grid-template-columns: 1fr;
     gap: 2rem;
   }
-  
-  /* Disable Custom Cursor on Touch */
-  .cursor-dot, .cursor-outline {
-    display: none;
-  }
-  
-  * {
-    cursor: auto;
-  }
 
   .chat-window {
     width: 300px;
@@ -615,4 +577,3 @@ footer {
     gap: 1rem;
   }
 }
-

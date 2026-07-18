@@ -12,6 +12,11 @@
     <link rel="stylesheet" href="style.css">
     <style>
         /* Added styles for new features */
+        /* Fix to make cursor visible with default icon */
+        html, body {
+            cursor: auto !important;
+        }
+
         #hero {
             position: relative;
             overflow: hidden;
@@ -109,9 +114,6 @@
         </button>
     </div>
 
-    <div class="cursor-dot" id="cursor-dot"></div>
-    <div class="cursor-outline" id="cursor-outline"></div>
-    
     <header>
         <div class="logo">SK.</div>
         <div class="header-controls">
@@ -364,24 +366,6 @@
                 hamburger.querySelector('i').classList.remove('fa-times');
                 hamburger.querySelector('i').classList.add('fa-bars');
             });
-        });
-
-        // Custom Cursor
-        const cursorDot = document.getElementById('cursor-dot');
-        const cursorOutline = document.getElementById('cursor-outline');
-
-        window.addEventListener('mousemove', (e) => {
-            const posX = e.clientX;
-            const posY = e.clientY;
-
-            cursorDot.style.left = `${posX}px`;
-            cursorDot.style.top = `${posY}px`;
-
-            // Smooth follow for outline
-            cursorOutline.animate({
-                left: `${posX}px`,
-                top: `${posY}px`
-            }, { duration: 500, fill: "forwards" });
         });
 
         // Chat Widget Logic
