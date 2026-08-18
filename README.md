@@ -38,6 +38,10 @@ Simply open `index.html` in your web browser to view the static site.
 ### Option 2: Run with Node.js
 If you prefer running it on a local server using the included `app.js`:
 
+1. **Navigate to the project directory**
+   ```bash
+   cd portfolio
+   ```
 1. **Install Dependencies**
    ```bash
    npm install express

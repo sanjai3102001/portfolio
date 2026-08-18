@@ -15,6 +15,8 @@
         /* Fix to make cursor visible with default icon */
         html, body {
             cursor: auto !important;
+            scroll-behavior: smooth; /* Keep for smooth scrolling to anchors */
+            scroll-snap-type: y mandatory; /* Enable vertical scroll snapping */
         }
 
         #hero {
@@ -90,6 +92,28 @@
             max-width: 100%;
             border-radius: 10px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        /* Cinematic Scroll Effects */
+        section {
+            transition: opacity 0.6s ease-in-out, transform 0.6s ease-in-out;
+            position: relative; /* Needed for transform */
+            z-index: 1;
+        }
+
+
+        .section-hidden {
+            opacity: 0;
+            transform: translateY(50px); /* Start slightly below */
+        }
+
+        .section-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        section {
+            scroll-snap-align: start; /* Snap each section to the start of the viewport */
+            min-height: 100vh; /* Ensure sections take full viewport height for snapping */
         }
     </style>
 </head>
@@ -478,6 +502,53 @@
             playReelText.textContent = 'Play Reel';
             heroVideo.currentTime = 0;
         });
+
+        // --- Smooth Scrolling & Section Reveal ---
+
+        // 1. Smooth scrolling for navigation links
+        // This works with the `scroll-behavior: smooth` in CSS for most browsers.
+        // The JavaScript fallback ensures it works everywhere and prevents the URL hash from changing.
+        document.querySelectorAll('header a[href^="#"], .hero-btns a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // 2. Cinematic reveal effect for sections on scroll
+        const sections = document.querySelectorAll('section');
+
+        const revealSection = (entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('section-visible');
+                    entry.target.classList.remove('section-hidden');
+                }
+            });
+        };
+
+        const sectionObserver = new IntersectionObserver(revealSection, {
+            root: null,
+            threshold: 0.15, // Trigger when 15% of the section is visible
+        });
+
+        // Initially hide all sections except the first one and observe them
+        sections.forEach((section, index) => {
+            if (index !== 0) { // Keep hero section visible
+                section.classList.add('section-hidden');
+            } else {
+                section.classList.add('section-visible');
+            }
+            sectionObserver.observe(section);
+        });
+
     </script>
 </body>
 </html>
